@@ -1,26 +1,74 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #080808;
+  --bg-secondary: #0e0e0e;
+  --bg-tertiary: #141414;
+  --color-ivory: #f4efe6;
+  --color-ivory-muted: #b8b2a7;
+  --color-gold: #c5a880;
+  --color-gold-hover: #d8bc94;
+  --color-border: #222222;
+  --color-border-light: #2e2e2e;
+
+  --font-serif-family: "Playfair Display", "Cormorant Garamond", "Didot", Georgia, serif;
+  --font-sans-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  border-radius: 0 !important;
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--color-ivory);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--color-ivory);
+  font-family: var(--font-sans-family);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif-family) !important;
+}
+
+::selection {
+  background-color: #c5a880;
+  color: #080808;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 0 !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c5a880;
+}
+
+/* Strict No-Radius across interactive elements */
+input, select, textarea, button, a {
+  border-radius: 0 !important;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #c5a880 !important;
 }
